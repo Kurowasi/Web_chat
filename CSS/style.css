@@ -1,0 +1,50 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: gray;
+}
+#container{
+	width: 750px;
+	height: 500px;
+	margin: 100px auto;
+}
+#chat{
+	width: 600px;
+	height: 500px;
+	float: left;
+}
+#chat_area{
+	width: 600px;
+	height: 450px;
+	overflow: auto;
+	background: green;
+}
+#send{
+	width: 600px;
+	height: 50px;
+}
+.text{
+	width: 560px;
+	height: 40px;
+	border: 5px solid #EEA34A;
+	color: white;
+	font-size: 20px;
+	font-family: inherit;
+	text-indent: 1em;
+	background: black;
+}
+#submit{
+	width: 20px;
+	height: 40px;
+	background: black;
+	color: white;
+	border-style: none;
+}
+#user_area{
+	width: 150px;
+	height: 500px;
+	background: blue;
+	float: left;
+}
