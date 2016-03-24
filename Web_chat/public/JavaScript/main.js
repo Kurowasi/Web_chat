@@ -1,4 +1,5 @@
 var name;
+var s;
 jQuery(function(){
     // 初期設定
     jQuery('#glayLayer').fadeIn('slow');
@@ -11,6 +12,9 @@ jQuery(function(){
         jQuery('#overLayer, #glayLayer').fadeOut('slow');
         // ユーザーエリアにユーザーの表示
         jQuery('#user_area').append('<p>' + name + '</p>');
+        // socket.ioに接続
+        s = io.connect('http://localhost:3000');
+        initSocket();
         return false;
     });
     // チャット送信処理

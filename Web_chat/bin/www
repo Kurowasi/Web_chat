@@ -22,12 +22,43 @@ app.set('port', port);
 var server = http.createServer(app);
 
 /**
+ * Create Socket.io
+ */
+
+var io = require('socket.io')(server);
+
+/**
  * Listen on provided port, on all network interfaces.
  */
 
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+/**
+ * Global variables
+ */
+var users = [];
+var User = function(_id){
+    this.id = _id;
+    this.name = "名無し";
+}
+
+/**
+ * Socket.io Connection
+ */
+
+io.sockets.on('connection', function(socket){
+    users.push(new User(socket.id));
+    socket.on('userName', function(userName){
+        users.forEach(function(user){
+            if(user.id == socket.id){
+                user.name = userName;
+            }
+            console.log(user.id, user.name);
+        });
+    });
+});
 
 /**
  * Normalize a port into a number, string, or false.
