@@ -19,7 +19,7 @@ jQuery(function(){
     });
     // チャット送信処理
     jQuery('#chat_form').submit(function(){
-        jQuery('#chat_area').prepend('<p>' + name + '>' + jQuery('input[name="text"]').val() + '</p');
+        s.emit('C_To_S_chatText', jQuery('input[name="text"]').val());
         document.getElementById('chat_text').value = "";
         return false;
     });

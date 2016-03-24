@@ -8,4 +8,9 @@ var initSocket = function(){
     s.on('disconnect', function(){
         console.log('接続解除');
     });    
+    // get chat text
+    s.on('S_To_C_chatText', function(text){
+        console.log(text);
+        jQuery('#chat_area').prepend('<p>' + text + '</p>');
+    });
 }
