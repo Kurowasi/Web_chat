@@ -25,7 +25,7 @@ body{
 	width: 600px;
 	height: 50px;
 }
-#text{
+#chat_text{
 	width: 560px;
 	height: 40px;
 	border: 5px solid #EEA34A;
@@ -58,7 +58,6 @@ body{
 #next_area{
 	width: 150px;
 	height: 500px;
-	background: blue;
 	float: left;
 	position: relative;
 	display: none;
@@ -67,4 +66,29 @@ body{
 	position: absolute;
 	top: 10px;
 	left: 10px;
+}
+#glayLayer{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: 0.6;
+	display: none;
+}
+#overLayer{
+	position: fixed;
+	top: 30%;
+	left: 50%;
+	width: 200px;
+	height: 50px;
+	background: red;
+	display: none;
+}
+#overLayer label{
+	margin-left: 10px;
+}
+#name_text{
+	margin-left: 5px;
 }

@@ -12,8 +12,8 @@
 		<div id="chat">
 			<div id="chat_area"></div>
 			<div id="send">
-				<form action="#" method="post">
-					<input type="text" name="text" id="text">
+				<form action="#" method="post" id="chat_form">
+					<input type="text" name="text" id="chat_text">
 					<input type="submit" id="submit">
 				</form>
 			</div>
@@ -24,6 +24,14 @@
 		<div id="next_area">
 			<a href="#"><img src="Image/btn_next.jpg" id="next"></a>
 		</div>
+	</div>
+	<div id="glayLayer"></div>
+	<div id="overLayer">
+		<form action="#" method="post" id="name_form">
+			<label for="name" id="set_name">名前を入力してください</label>
+			<input type="text" id="name_text">
+			<input type="submit">
+		</form>
 	</div>
 </body>
 </html>
