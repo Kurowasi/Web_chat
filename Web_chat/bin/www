@@ -55,19 +55,25 @@ io.sockets.on('connection', function(socket){
     socket.on('userName', function(userName){
         users.forEach(function(user){
             if(user.id == socket.id){
-                user.name = userName;
+                if(userName == ""){
+                    user.name = "名無し";
+                }else{
+                    user.name = userName;
+                }
             }
         });
     });
     // get chat text
-    socket.on('C_To_S_chatText', function(text){
-        console.log(text);
+    socket.on('C_To_S_chatText', function(_text){
         users.forEach(function(user){
+            var obj = {
+                text: _text,
+                name: user.name
+            };
             if(user.id == socket.id){
-                console.log(user.id);
+                io.sockets.emit('S_To_C_chatText', obj);
             }
         });
-        io.sockets.emit('S_To_C_chatText', text);
     });
 });
 
