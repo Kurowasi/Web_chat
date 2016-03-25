@@ -45,6 +45,7 @@ body{
 	background: blue;
 	float: left;
 	position: relative;
+    overflow: auto;
 }
 #prev{
 	position: absolute;
