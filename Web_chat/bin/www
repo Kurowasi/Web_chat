@@ -68,9 +68,12 @@ io.sockets.on('connection', function(socket){
     // get chat text
     socket.on('C_To_S_chatText', function(_text){
         users.forEach(function(user){
+            var dt = new Date();
             var obj = {
                 text: _text,
-                name: user.name
+                name: user.name,
+                hour: dt.getHours(),
+                minute: dt.getMinutes()
             };
             if(user.id == socket.id){
                 io.sockets.emit('S_To_C_chatText', obj);

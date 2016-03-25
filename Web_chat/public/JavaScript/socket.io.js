@@ -19,7 +19,10 @@ var initSocket = function(){
     });
     // get chat text
     s.on('S_To_C_chatText', function(obj){
+        if(parseInt(obj.minute) < 10){
+            obj.minute = '0' + obj.minute;
+        }
         jQuery('#chat_area').prepend('<dd>' + obj.text + '</dd>');
-        jQuery('#chat_area').prepend('<dt>' + obj.name + '</dt>');
+        jQuery('#chat_area').prepend('<dt>' + obj.name + '     ' + obj.hour + ':' + obj.minute + '</dt>');
     });
 }
