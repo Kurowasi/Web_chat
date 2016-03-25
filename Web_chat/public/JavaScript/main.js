@@ -10,8 +10,6 @@ jQuery(function(){
         name = name_text.value;
         name_text = "";
         jQuery('#overLayer, #glayLayer').fadeOut('slow');
-        // ユーザーエリアにユーザーの表示
-        jQuery('#user_area').append('<p>' + name + '</p>');
         // socket.ioに接続
         s = io.connect('http://localhost:3000');
         initSocket();
@@ -25,6 +23,7 @@ jQuery(function(){
     });
     // user_areaの非表示
     jQuery('#user_area a').click(function(){
+        jQuery('#users').hide();
         jQuery('#user_area').animate({
             'width': '0px'
         }, 'slow', 'swing', function(){
@@ -37,5 +36,6 @@ jQuery(function(){
         jQuery('#next_area').hide();
         jQuery('#user_area').css('width', '150px');
         jQuery('#user_area').show('slow');
+        jQuery('#users').show();
     });    
 });
