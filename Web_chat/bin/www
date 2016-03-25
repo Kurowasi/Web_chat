@@ -80,6 +80,16 @@ io.sockets.on('connection', function(socket){
             }
         });
     });
+    // disconnect
+    socket.on('disconnect', function(){
+        users.forEach(function(user, i){
+            if(user.id == socket.id){
+                users.splice(i, 1);
+            }
+        });
+        // send users
+        io.sockets.emit('users', users);
+    });
 });
 
 /**
