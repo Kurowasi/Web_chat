@@ -2,6 +2,14 @@ body{
 	background: gray;
     font-family: 'MS UI Gothic', cursive;
 }
+#background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-135deg, #000033, #444444)
+}
 #login{
     width: 300px;
     height: 50px;
@@ -33,6 +41,7 @@ body{
 	float: left;
 }
 #chat_area{
+    position: relative;
 	width: 590px;
 	height: 440px;
     border: 5px solid #444444;
@@ -54,6 +63,7 @@ body{
 	height: 50px;
 }
 #chat_text{
+    position: relative;
 	width: 540px;
 	height: 40px;
 	border: 5px solid #FAFAD2;
@@ -64,6 +74,7 @@ body{
 	background: black;
 }
 #submit{
+    position: relative;
 	width: 40px;
 	height: 40px;
 	background: black;
@@ -74,7 +85,7 @@ body{
 #user_area{
 	width: 142px;
 	height: 492px;
-    border: 4px solid #000033;
+    border: 4px solid #00fa9a;
 	background: #EEEEEE;
 	float: left;
 	position: relative;
