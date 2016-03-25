@@ -60,6 +60,7 @@ io.sockets.on('connection', function(socket){
                 }else{
                     user.name = userName;
                 }
+                socket.broadcast.emit('login', user.name);
             }
         });
         // send users
@@ -86,6 +87,7 @@ io.sockets.on('connection', function(socket){
             if(user.id == socket.id){
                 users.splice(i, 1);
             }
+            socket.broadcast.emit('logout', user.name);
         });
         // send users
         io.sockets.emit('users', users);

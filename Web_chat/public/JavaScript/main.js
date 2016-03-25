@@ -34,7 +34,7 @@ jQuery(function(){
     // user_areaの表示
     jQuery('#next_area a').click(function(){
         jQuery('#next_area').hide();
-        jQuery('#user_area').css('width', '150px');
+        jQuery('#user_area').css('width', '142px');
         jQuery('#user_area').show('slow');
         jQuery('#users').show();
     });    

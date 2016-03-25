@@ -23,6 +23,24 @@ var initSocket = function(){
             obj.minute = '0' + obj.minute;
         }
         jQuery('#chat_area').prepend('<dd>' + obj.text + '</dd>');
-        jQuery('#chat_area').prepend('<dt>' + obj.name + '     ' + obj.hour + ':' + obj.minute + '</dt>');
+        jQuery('#chat_area').prepend('<dt>' + obj.name + ' ' + obj.hour + ':' + obj.minute + '</dt>');
+    });
+    // get login user
+    s.on('login', function(userName){
+        jQuery('#log').empty();
+        jQuery('#log').prepend('<div id="login">' + userName + 'さんがログインしました</div>');
+        jQuery('#login').slideDown('slow');
+        setTimeout(function(){
+            jQuery('#login').slideUp('slow');
+        }, 3000);
+    });
+    // get logout user
+    s.on('logout', function(userName){
+        jQuery('#log').empty();
+        jQuery('#log').prepend('<div id="logout">' + userName + 'さんがログアウトしました</div>');
+        jQuery('#logout').slideDown('slow');
+        setTimeout(function(){
+            jQuery('#logout').slideUp('slow');
+        }, 3000);
     });
 }

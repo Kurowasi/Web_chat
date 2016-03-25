@@ -1,10 +1,31 @@
 body{
 	background: gray;
+    font-family: 'MS UI Gothic', cursive;
+}
+#login{
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    background: #555555;
+    display: none;
+    color: #32CD32;
+    text-align: center;
+    line-height: 50px;
+}
+#logout{
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    background: #555555;
+    display: none;
+    color: #32CD32;
+    text-align: center;
+    line-height: 50px;
 }
 #container{
 	width: 750px;
 	height: 500px;
-	margin: 100px auto;
+	margin: 10px auto;
 }
 #chat{
 	width: 600px;
@@ -12,17 +33,20 @@ body{
 	float: left;
 }
 #chat_area{
-	width: 596px;
-	height: 450px;
-    border: 2px solid #444444;
+	width: 590px;
+	height: 440px;
+    border: 5px solid #444444;
 	overflow: auto;
 	background: black;
     opacity: 0.8;
 }
 #chat_area dt{
+    margin: 10px 0 0 10px;
     color: white;
 }
 #chat_area dd{
+    margin-top: 5px;
+    margin-left: 30px;
     color: white;
 }
 #send{
@@ -32,7 +56,7 @@ body{
 #chat_text{
 	width: 540px;
 	height: 40px;
-	border: 5px solid #EEA34A;
+	border: 5px solid #FAFAD2;
 	color: white;
 	font-size: 20px;
 	font-family: inherit;
@@ -48,12 +72,18 @@ body{
 	border-top: 3px solid black;
 }
 #user_area{
-	width: 150px;
-	height: 500px;
-	background: white;
+	width: 142px;
+	height: 492px;
+    border: 4px solid #000033;
+	background: #EEEEEE;
 	float: left;
 	position: relative;
     overflow: auto;
+    font-family: arial, sans-serif;
+    font-size: 15px;
+}
+#user_area p{
+    margin-left: 10px;
 }
 #prev{
 	position: absolute;
@@ -88,7 +118,7 @@ body{
 	left: 50%;
 	width: 230px;
 	height: 45px;
-	background: red;
+	background: #BBBBBB;
 	display: none;
 }
 #overLayer label{
